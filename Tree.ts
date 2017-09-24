@@ -16,5 +16,8 @@ export default interface Tree<D> {
      * @param e {any} The element to search
      */
     member(e :D) :boolean;
+    /**
+     * Add an element to the Tree therefore must return a NonEmptyBST
+     */
     add(e :D) :NonEmptyBST<D>;
 }

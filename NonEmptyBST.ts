@@ -4,9 +4,10 @@ import EmptyBST from "./EmptyBST"
  * A class that rappresent a non-empty Binary Tree
  */
 export default class NonEmptyBST<D> implements Tree<D> {
-    root :D;
-    left :Tree<D>;
-    right :Tree<D>;
+    root :D;            /* Parent */
+    left :Tree<D>;      /* Left children */
+    right :Tree<D>;     /* Right children */
+
     constructor(elem :D, leftTree ?:Tree<D>, rightTree ?:Tree<D>) {
         this.root = elem;
         this.left = leftTree || new EmptyBST<D>();
