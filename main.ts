@@ -17,9 +17,9 @@ sample.forEach(elem => {
 
 console.log("Tree cardinality - ", tree.cardinality());
 console.log("Print tree in ascendent order");
-tree.printAsc();
+tree.inOrderTraverse((node :number) => console.log(node));
 console.log("Print tree in descendent order");
-tree.printDesc();
+tree.preOrderTraverse((node :number) => console.log(node));
 
 
 /* console.log("Is empty? ", tree.isEmpty());

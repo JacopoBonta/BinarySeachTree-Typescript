@@ -13,22 +13,16 @@ var EmptyBST = /** @class */ (function () {
     EmptyBST.prototype.cardinality = function () {
         return 0;
     };
-    EmptyBST.prototype.member = function (elem) {
+    EmptyBST.prototype.search = function (elem) {
         return false;
     };
-    EmptyBST.prototype.add = function (elem) {
+    EmptyBST.prototype.insert = function (elem) {
         return new NonEmptyBST_1.default(elem);
     };
-    EmptyBST.prototype.hasLeft = function () {
-        return false;
-    };
-    EmptyBST.prototype.hasRight = function () {
-        return false;
-    };
-    EmptyBST.prototype.printAsc = function () {
+    EmptyBST.prototype.inOrderTraverse = function (callback) {
         return;
     };
-    EmptyBST.prototype.printDesc = function () {
+    EmptyBST.prototype.preOrderTraverse = function (callback) {
         return;
     };
     return EmptyBST;

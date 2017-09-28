@@ -9,13 +9,13 @@ while (size-- > 0) {
 }
 console.log("Sample array ", sample);
 sample.forEach(function (elem) {
-    tree = tree.add(elem);
+    tree = tree.insert(elem);
 });
 console.log("Tree cardinality - ", tree.cardinality());
 console.log("Print tree in ascendent order");
-tree.printAsc();
+tree.inOrderTraverse(function (node) { return console.log(node); });
 console.log("Print tree in descendent order");
-tree.printDesc();
+tree.preOrderTraverse(function (node) { return console.log(node); });
 /* console.log("Is empty? ", tree.isEmpty());
 console.log("Cardinality ", tree.cardinality());
 console.log("There is a member with value of 5? ", tree.member(5));

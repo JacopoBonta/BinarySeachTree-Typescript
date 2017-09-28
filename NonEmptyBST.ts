@@ -42,15 +42,15 @@ export default class NonEmptyBST<D> implements Tree<D> {
         }
     }
 
-    printAsc() :void {
-        this.left.printAsc();
-        console.log(this.root);
-        this.right.printAsc();
+    inOrderTraverse(callback :Function) :void {
+        this.left.inOrderTraverse(callback);
+        callback(this.root);
+        this.right.inOrderTraverse(callback);
     }
 
-    printDesc() :void {
-        this.right.printDesc();
-        console.log(this.root);
-        this.left.printDesc();
+    preOrderTraverse(callback :Function) :void {
+        this.right.preOrderTraverse(callback);
+        callback(this.root);
+        this.left.preOrderTraverse(callback);
     }
 }

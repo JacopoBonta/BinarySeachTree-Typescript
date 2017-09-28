@@ -22,11 +22,11 @@ export default class EmptyBST<D> implements Tree<D> {
         return new NonEmptyBST(elem);
     }
 
-    printAsc() {
+    inOrderTraverse(callback :Function) :void {
         return;
     }
 
-    printDesc() {
+    preOrderTraverse(callback :Function) :void {
         return;
     }
 }

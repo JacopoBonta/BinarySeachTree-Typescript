@@ -16,57 +16,36 @@ var NonEmptyBST = /** @class */ (function () {
     NonEmptyBST.prototype.cardinality = function () {
         return 1 + this.left.cardinality() + this.right.cardinality();
     };
-    NonEmptyBST.prototype.member = function (elem) {
+    NonEmptyBST.prototype.search = function (elem) {
         if (this.root === elem) {
             return true;
         }
         else {
             if (elem < this.root) {
-                return this.left.member(elem);
+                return this.left.search(elem);
             }
             else {
-                return this.right.member(elem);
+                return this.right.search(elem);
             }
         }
     };
-    NonEmptyBST.prototype.add = function (elem) {
-        /* if (elem == this.root) {
-            return this;
-        } else {
-            
-        } */
+    NonEmptyBST.prototype.insert = function (elem) {
         if (elem < this.root) {
-            return new NonEmptyBST(this.root, this.left.add(elem), this.right);
+            return new NonEmptyBST(this.root, this.left.insert(elem), this.right);
         }
         else {
-            return new NonEmptyBST(this.root, this.left, this.right.add(elem));
+            return new NonEmptyBST(this.root, this.left, this.right.insert(elem));
         }
     };
-    NonEmptyBST.prototype.printAsc = function () {
-        this.left.printAsc();
-        console.log(this.root);
-        this.right.printAsc();
+    NonEmptyBST.prototype.inOrderTraverse = function (callback) {
+        this.left.inOrderTraverse(callback);
+        callback(this.root);
+        this.right.inOrderTraverse(callback);
     };
-    NonEmptyBST.prototype.printDesc = function () {
-        this.right.printDesc();
-        console.log(this.root);
-        this.left.printDesc();
-    };
-    NonEmptyBST.prototype.hasLeft = function () {
-        if (this.left.isEmpty()) {
-            return false;
-        }
-        else {
-            return true;
-        }
-    };
-    NonEmptyBST.prototype.hasRight = function () {
-        if (this.right.isEmpty()) {
-            return false;
-        }
-        else {
-            return true;
-        }
+    NonEmptyBST.prototype.preOrderTraverse = function (callback) {
+        this.right.preOrderTraverse(callback);
+        callback(this.root);
+        this.left.preOrderTraverse(callback);
     };
     return NonEmptyBST;
 }());

@@ -21,11 +21,12 @@ export default interface Tree<D> {
      */
     insert(e :D) :NonEmptyBST<D>;
     /**
-     * Print Tree in ascendent order
+     * Traverse Tree in ascendent order and call the callback at each node.
+     * @param cb {Function} The function executed at each node. The node root value is given as function parameter.
      */
-    printAsc() :void;
+    inOrderTraverse(cb :Function) :void;
     /**
      * Print Tree in descendent order
      */
-    printDesc() :void;
+    preOrderTraverse(cb :Function) :void;
 }
