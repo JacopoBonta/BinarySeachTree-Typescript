@@ -2,8 +2,27 @@ import EmptyBST from "./EmptyBST"
 import NonEmptyBST from "./NonEmptyBST"
 
 let tree = new EmptyBST<number>();
+let size = 5;
+let sample = []
 
-console.log("Is empty? ", tree.isEmpty());
+while (size-->0) {
+    sample.push(Math.floor(Math.random() * 10));
+}
+
+console.log("Sample array ", sample);
+
+sample.forEach(elem => {
+    tree = tree.add(elem);
+});
+
+console.log("Tree cardinality - ", tree.cardinality());
+console.log("Print tree in ascendent order");
+tree.printAsc();
+console.log("Print tree in descendent order");
+tree.printDesc();
+
+
+/* console.log("Is empty? ", tree.isEmpty());
 console.log("Cardinality ", tree.cardinality());
 console.log("There is a member with value of 5? ", tree.member(5));
 console.log("Adding a new member with value of 2... ", tree = tree.add(2));
@@ -21,6 +40,4 @@ console.log("");
 console.log("Is empty? ", tree.isEmpty());
 console.log("Cardinality ", tree.cardinality());
 console.log("There is a member with value of 5? ", tree.member(5));
-console.log("Adding a new member with value of 7... ", tree = tree.add(7));
-
-
+console.log("Adding a new member with value of 7... ", tree = tree.add(7)); */

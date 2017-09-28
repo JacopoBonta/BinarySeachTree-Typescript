@@ -21,4 +21,12 @@ export default class EmptyBST<D> implements Tree<D> {
     add(elem :D) :NonEmptyBST<D> {
         return new NonEmptyBST(elem);
     }
+
+    printAsc() {
+        return;
+    }
+
+    printDesc() {
+        return;
+    }
 }

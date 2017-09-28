@@ -30,16 +30,42 @@ var NonEmptyBST = /** @class */ (function () {
         }
     };
     NonEmptyBST.prototype.add = function (elem) {
-        if (elem == this.root) {
+        /* if (elem == this.root) {
             return this;
+        } else {
+            
+        } */
+        if (elem < this.root) {
+            return new NonEmptyBST(this.root, this.left.add(elem), this.right);
         }
         else {
-            if (elem < this.root) {
-                return new NonEmptyBST(this.root, this.left.add(elem), this.right);
-            }
-            else {
-                return new NonEmptyBST(this.root, this.left, this.right.add(elem));
-            }
+            return new NonEmptyBST(this.root, this.left, this.right.add(elem));
+        }
+    };
+    NonEmptyBST.prototype.printAsc = function () {
+        this.left.printAsc();
+        console.log(this.root);
+        this.right.printAsc();
+    };
+    NonEmptyBST.prototype.printDesc = function () {
+        this.right.printDesc();
+        console.log(this.root);
+        this.left.printDesc();
+    };
+    NonEmptyBST.prototype.hasLeft = function () {
+        if (this.left.isEmpty()) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    };
+    NonEmptyBST.prototype.hasRight = function () {
+        if (this.right.isEmpty()) {
+            return false;
+        }
+        else {
+            return true;
         }
     };
     return NonEmptyBST;

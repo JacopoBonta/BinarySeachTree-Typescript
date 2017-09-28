@@ -19,6 +19,18 @@ var EmptyBST = /** @class */ (function () {
     EmptyBST.prototype.add = function (elem) {
         return new NonEmptyBST_1.default(elem);
     };
+    EmptyBST.prototype.hasLeft = function () {
+        return false;
+    };
+    EmptyBST.prototype.hasRight = function () {
+        return false;
+    };
+    EmptyBST.prototype.printAsc = function () {
+        return;
+    };
+    EmptyBST.prototype.printDesc = function () {
+        return;
+    };
     return EmptyBST;
 }());
 exports.default = EmptyBST;

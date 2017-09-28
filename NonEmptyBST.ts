@@ -35,14 +35,22 @@ export default class NonEmptyBST<D> implements Tree<D> {
     }
 
     add(elem :D) :NonEmptyBST<D> {
-        if (elem == this.root) {
-            return this;
+        if (elem < this.root) {
+            return new NonEmptyBST(this.root, this.left.add(elem), this.right);
         } else {
-            if (elem < this.root) {
-                return new NonEmptyBST(this.root, this.left.add(elem), this.right);
-            } else {
-                return new NonEmptyBST(this.root, this.left, this.right.add(elem));
-            }
+            return new NonEmptyBST(this.root, this.left, this.right.add(elem));
         }
+    }
+
+    printAsc() :void {
+        this.left.printAsc();
+        console.log(this.root);
+        this.right.printAsc();
+    }
+
+    printDesc() :void {
+        this.right.printDesc();
+        console.log(this.root);
+        this.left.printDesc();
     }
 }
