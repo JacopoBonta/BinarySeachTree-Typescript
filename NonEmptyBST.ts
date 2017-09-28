@@ -22,14 +22,14 @@ export default class NonEmptyBST<D> implements Tree<D> {
         return 1 + this.left.cardinality() + this.right.cardinality();
     }
 
-    member(elem :D) :boolean {
+    search(elem :D) :boolean {
         if (this.root === elem) {
             return true;
         } else {
             if (elem < this.root) {
-                return this.left.member(elem);
+                return this.left.search(elem);
             } else {
-                return this.right.member(elem);
+                return this.right.search(elem);
             }
         }
     }

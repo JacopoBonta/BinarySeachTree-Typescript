@@ -14,7 +14,7 @@ export default class EmptyBST<D> implements Tree<D> {
         return 0;
     }
 
-    member(elem :D) :boolean {
+    search(elem :D) :boolean {
         return false;
     }
 

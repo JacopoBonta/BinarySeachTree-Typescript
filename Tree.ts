@@ -1,5 +1,5 @@
 /**
- * Tree Interface
+ * Tree Interface.
  */
 import NonEmptyBST from "./NonEmptyBST"
 export default interface Tree<D> {
@@ -15,7 +15,7 @@ export default interface Tree<D> {
      * Is the element present in the tree?
      * @param e {D} The element to search
      */
-    member(e :D) :boolean;
+    search(e :D) :boolean;
     /**
      * Add an element to the Tree, therefore must return a NonEmptyBST
      */
