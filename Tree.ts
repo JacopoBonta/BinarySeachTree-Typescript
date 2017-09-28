@@ -19,7 +19,7 @@ export default interface Tree<D> {
     /**
      * Add an element to the Tree, therefore must return a NonEmptyBST
      */
-    add(e :D) :NonEmptyBST<D>;
+    insert(e :D) :NonEmptyBST<D>;
     /**
      * Print Tree in ascendent order
      */

@@ -34,11 +34,11 @@ export default class NonEmptyBST<D> implements Tree<D> {
         }
     }
 
-    add(elem :D) :NonEmptyBST<D> {
+    insert(elem :D) :NonEmptyBST<D> {
         if (elem < this.root) {
-            return new NonEmptyBST(this.root, this.left.add(elem), this.right);
+            return new NonEmptyBST(this.root, this.left.insert(elem), this.right);
         } else {
-            return new NonEmptyBST(this.root, this.left, this.right.add(elem));
+            return new NonEmptyBST(this.root, this.left, this.right.insert(elem));
         }
     }
 

@@ -12,7 +12,7 @@ while (size-->0) {
 console.log("Sample array ", sample);
 
 sample.forEach(elem => {
-    tree = tree.add(elem);
+    tree = tree.insert(elem);
 });
 
 console.log("Tree cardinality - ", tree.cardinality());

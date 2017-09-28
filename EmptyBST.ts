@@ -18,7 +18,7 @@ export default class EmptyBST<D> implements Tree<D> {
         return false;
     }
 
-    add(elem :D) :NonEmptyBST<D> {
+    insert(elem :D) :NonEmptyBST<D> {
         return new NonEmptyBST(elem);
     }
 
