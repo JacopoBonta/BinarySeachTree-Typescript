@@ -1,1 +1,1 @@
-# Binary Search Tree implementation in TypeScript
+# Binary Search Tree written in TypeScript
